@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: spinnaker-app
 spec:
-  replicas: 5
+  replicas: 6
   selector:
     matchLabels:
       app: spinnaker-app
