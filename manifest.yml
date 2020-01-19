@@ -1,0 +1,33 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: spinnaker-app
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: spinnaker-app
+  template:
+    metadata:
+      labels:
+        app: spinnaker-app
+    spec:
+      containers:
+      - name: spinnaker-app
+        image: index.docker.io/punkerside/spinnaker-app
+        ports:
+        - containerPort: 80
+          protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: spinnaker-app
+spec:
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+    name: http
+  selector:
+    app: spinnaker-app
