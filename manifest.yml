@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: spinnaker-app
 spec:
-  replicas: 4
+  replicas: 5
   selector:
     matchLabels:
       app: spinnaker-app
@@ -31,3 +31,4 @@ spec:
     name: http
   selector:
     app: spinnaker-app
+  type: LoadBalancer
