@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: spinnaker-app
-        image: index.docker.io/punkerside/spinnaker-app:v0.0.7
+        image: index.docker.io/punkerside/spinnaker-app
         ports:
         - containerPort: 80
           protocol: TCP
